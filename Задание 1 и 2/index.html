@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Задание №3</title>
+        <style type="text/css"></style>
+        <script src = "https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Задание 1</h1>
+            <h2>Пауки - это паукообразные</h2>
+            <div v-show="visible">
+                <p>Пауки не относятся к насекомым, как многие путают. Для них выделен отдельный класс!</p>
+            </div>
+            <button v-on:click="visible=!visible">{{visible?'Скрыть':'Отобразить'}}</button>
+            
+            <h1>Задание 2</h1>
+            <div>
+                <button v-on:click="visible1=true; visible2=false; visible3=false; visible4=false">Главная</button>
+                <button v-on:click="visible1=false; visible2=true; visible3=false; visible4=false">Проекты</button>
+                <button v-on:click="visible1=false; visible2=false; visible3=true; visible4=false">Услуги</button>
+                <button v-on:click="visible1=false; visible2=false; visible3=false; visible4=true">Контакты</button>
+                <button v-on:click="visible1=false; visible2=false; visible3=false; visible4=false">Скрыть</button>
+                
+            </div>
+            
+            <div>
+                <div v-show="visible1">
+                    Здесь находится основная информация о компании
+                </div>
+
+                <div v-show="visible2">
+                    Здесь находится информация о наших проектах
+                </div>
+
+                <div v-show="visible3">
+                    Здесь находится информация о наших услугах
+                </div>
+
+                <div v-show="visible4">
+                    Здесь находятся наши контакты (адрес и телефон)
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Практическая работа 3</title>
+        <meta charset="UTF-8">        
+        <script src="https://unpkg.com/vue@next"></script>
+        
+        <style type="text/css">
+            span {                
+                display: block;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h2>Задание 3</h2>
+        <div id="app">
+            <input v-model="search" placeholder="Поиск по названию">
+            <div>
+                <ul>
+                    <li v-for="tmp in filter_articles">
+                        <span>
+                            {{ tmp.article }}
+                        </span>
+                        <span>
+                            <a v-bind:href='tmp.url' target="_blank">
+                                {{ tmp.url }}
+                            </a>
+                        </span>
+                        <span>
+                            <a v-bind:href='tmp.url' target="_blank"><img style=' width:64px; height:64px;' v-bind:src='tmp.img' >
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

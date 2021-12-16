@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Практическая работа 3</title>
+        <meta charset="UTF-8">        
+        <script src="https://unpkg.com/vue@next"></script>
+        
+        <style type="text/css">
+            span {                
+                display: block;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h2>Задание 4</h2>
+        
+        <div id="app">
+
+            <div>
+                <ul>
+                    <p class="btn" v-if="isHidden" v-on:click="isHidden = !isHidden">
+                        <template v-if="isHidden">
+                            {{currentTeg}}
+                        </template>
+                    </p>
+
+                    <p class="btn" v-if="!isHidden">
+                        <template v-if="!isHidden">
+                            <input type="text" v-bind:value="currentTeg" v-model="currentTeg">
+                        </template>
+                    </p>
+
+                    <div>
+                        <button class="btn" v-if="!isHidden" v-on:click="isHidden = !isHidden">
+                            Сохранить
+                        </button> 
+
+                        <button class="btn" v-if="!isHidden" v-on:click="isHidden = !isHidden ;currentTeg = currentTegFirst">
+                            Сбросить
+                        </button>
+                    </div>        
+                </ul> 
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

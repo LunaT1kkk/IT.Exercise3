@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Практическая работа 3</title>
+        <meta charset="UTF-8">        
+        <script src="https://unpkg.com/vue@next"></script>
+        
+        <style type="text/css">
+            span {                
+                display: block;
+            }
+            ul {                
+                padding-left: 0;
+            }
+            li {                
+                list-style-type: none;
+            }
+            #id1{
+                column-count: 2;
+                height: 600px;
+                width: 400px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h2>Задание 6</h2>
+        
+        <div id="app">
+            <button v-on:click="visible1 = true; visible2 = false">Список</button>
+            <button v-on:click="visible1 = false; visible2 = true">Сетка</button>
+            
+            <div v-show="visible1">
+                <ul>
+                    <li v-for="tmp in articles">
+                        <span>
+                            {{ tmp.article }}
+                        </span>
+                        <span>
+                            <a v-bind:href='tmp.url' target="_blank">
+                                {{ tmp.url }}
+                            </a>
+                        </span>
+                        <span>
+                            <a v-bind:href='tmp.url' target="_blank"><img style=' width:64px; height:64px;' v-bind:src='tmp.img' >
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div v-show="visible2">
+                <ul id = "id1">
+                    <li v-for="tmp in articles">
+                        <p>
+                            <a v-bind:href='tmp.url' target="_blank"><img style=' width:128px; height:128px;' v-bind:src='tmp.img' >
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

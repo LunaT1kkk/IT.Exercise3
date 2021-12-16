@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Практическая работа 3</title>
+        <meta charset="UTF-8">        
+        <script src="https://unpkg.com/vue@next"></script>
+        
+        <style type="text/css">
+            button{
+                width: 200px;
+                background: #d92929;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h2>Задание 5</h2>
+        
+        <div id="app">
+            <p>
+                Список курсов по программированию:
+            </p>
+            
+            <ul>
+                <li v-for="tmp in arr">
+                    <button v-on:click="tmp.flag = !tmp.flag; tmp.flag? sumPrice = sumPrice + tmp.price : sumPrice = sumPrice - tmp.price">
+                        {{ tmp.name }} {{ tmp.price }} рублей
+                    </button>
+                </li>
+            </ul>
+            
+            <p>
+                Итого: {{ sumPrice }} рублей
+            </p>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
